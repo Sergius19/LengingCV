@@ -166,20 +166,29 @@
 						<div class="content">
 							<p><strong>Usually use</strong> PHPStrom/Sublime/VisualStudioCode
 							</p>
-							<form>
+							<form class="php-mail-form" role="form" action="controllers/contactform.php" method="POST">
 								<div class="fields">
-									<div class="field half">
-										<input type="text" name="name" id="name" placeholder="Name" />
+									<div class="field half form-group">
+										<input type="text" name="name" id="contact-name" placeholder="Name" data-rule="minlen:4" 
+										data-msg="please enter at least 4 chars" />
+										<div class="validate"></div> 
 									</div>
-									<div class="field half">
-										<input type="email" name="email" id="email" placeholder="Email" />
+									<div class="field half form-group">
+										<input type="email" name="email" id="contact-email" placeholder="Email" data-rule="email" data-msg="please enter a valid email"  />
+										<div class="validate"></div> 
 									</div>
-									<div class="field">
-										<textarea name="message" id="message" placeholder="Message" rows="7"></textarea>
+									<div class="field form-group">
+										<textarea name="message" id="contact-message" placeholder="Message" rows="7" data-rule="minlen:4" data-msg="please enter at least 4 chars"></textarea>
+										<div class="validate"></div> 
 									</div>
 								</div>
+								<div class="loading"></div>
+								<div class="error-message"></div>
+								<div class="sent-message">Your message has been sent</div>
 								<ul class="actions">
-									<li><input type="submit" value="Send Message" class="button primary" /></li>
+									<li>
+										<button type="submit" class="btn btn-large button primary">Send messange</button>
+									</li>
 								</ul>
 							</form>
 						</div>
@@ -228,6 +237,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/validate.js"></script>
 
 	</body>
 </html>
